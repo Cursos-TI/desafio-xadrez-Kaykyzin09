@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main () {
-    int torre = 1, bispo = 1, rainha = 1;
+    int torre = 1, bispo = 1, rainha = 1, cavalo = 1;
 
     
 //exibição da Torre
@@ -31,6 +31,18 @@ int main () {
 //loop da Rainha
     for (rainha = 1; rainha <= 8;rainha++)
     {
+        printf("Esquerda\n");
+    }
+
+//exibiçao do Cavalo
+    printf("\n### Cavalo ###\n");
+
+//lood aninhado do Cavalo
+    while(cavalo--)
+    {
+        for(int i = 0;i < 2; i++) {
+            printf("Baixo\n");
+        }
         printf("Esquerda\n");
     }
     
