@@ -37,7 +37,7 @@ int main () {
 //exibiçao do Cavalo
     printf("\n### Cavalo ###\n");
 
-//lood aninhado do Cavalo
+//loop aninhado do Cavalo
     while(cavalo--)
     {
         for(int i = 0;i < 2; i++) {
