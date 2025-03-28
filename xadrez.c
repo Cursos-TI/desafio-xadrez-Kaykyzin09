@@ -1,49 +1,81 @@
 #include <stdio.h>
 
-int main () {
-    int torre = 1, bispo = 1, rainha = 1, cavalo = 1;
-
-    
-//exibição da Torre
-    printf("\n### Torre ###\n");
-
-//loop da Torre
-    while(torre <= 5)
-    {
+//função recursiva para movimento da Torre
+void moverTorre(int casas1){
+    if(casas1 > 0){
         printf("Direita\n");
-        torre++;
+        moverTorre(casas1 - 1);
     }
+}    
+//função recursiva para movimento da bispo
+void moverBispo(int casas2){
+    if(casas2 > 0){
+        printf("Cima, Direita\n");
+        moverBispo(casas2 - 1);
+    }
+}
+//função recursiva para movimento da Rainha
+void moverRainha(int casas3){
+    if(casas3 > 0){
+    printf("Esquerda\n");
+    moverRainha(casas3 - 1);
+    }
+}
 
+int main()
+{
+
+//Exibição da Torre com recursão
+    printf("### Torre ###\n");
+    moverTorre(5);
+ 
 //exibição do Bispo
     printf("\n### Bispo ###\n");
-
-//loop do Bispo
-    do {
-
-    printf("Cima, Direita\n");
-    bispo++;
-    
-    } while (bispo <= 5);
-    
-//exibição da Rainha
-    printf("\n ### Rainha ###\n");
-
-//loop da Rainha
-    for (rainha = 1; rainha <= 8;rainha++)
+//Movimento do Bispo usando recursão e loops aninhados   
+    int casaBispo = -5;
+    while (casaBispo > 0)
     {
-        printf("Esquerda\n");
+        int horizontais = 1;
+        while(horizontais <= 1){
+            printf("Cima, direita\n");
+            horizontais++;
+        }
+        casaBispo--;
     }
-
-//exibiçao do Cavalo
+    moverBispo(5);
+    
+//Exibição da variável Rainha    
+    printf("\n### Rainha ###\n");
+    moverRainha(8);
+    
+//Exibição do Cavalo
     printf("\n### Cavalo ###\n");
 
-//loop aninhado do Cavalo
-    while(cavalo--)
+//declaração das variáveis do cavalo
+    int cima = 2;
+    int MovDireita = 1;
+
+//loop aninhado do Cavalo para cima
+    for(int i = -1; i <= cima; i++)
     {
-        for(int i = 0;i < 2; i++) {
-            printf("Baixo\n");
+        if (i % 2 == 0)
+        {
+            continue;
+        }
+        printf("Baixo\n");
+    
+    }
+    
+//loop aninhado cavalo para direita
+    int direita = 1;
+    while (direita <= MovDireita)
+    {
+        if (direita > 5)
+        {
+            break;
         }
         printf("Esquerda\n");
+        direita++;
     }
     
     return 0;
